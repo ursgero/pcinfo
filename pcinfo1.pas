@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, mysql56conn, sqldb, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, IdUDPServer, inifiles, pcinfo2, pcinfo3, pcinfo4,
-  shellapi, IdSocketHandle, IdGlobal, ConfigBroadCastU;
+  StdCtrls, ExtCtrls, IdUDPServer, pcinfo2, pcinfo3, pcinfo4,
+  shellapi, IdSocketHandle, IdGlobal, ConfigBroadCastU, GlobalConfig;
 
 type
 
@@ -102,7 +102,7 @@ implementation
 function TForm1.AskForDatabaseCredentials: boolean;
 var
   DBServer, DBUser, DBPass, DBName: string;
-  IniFile: TIniFile;
+  // IniFile: TIniFile;
 begin
   Result := False;
 
@@ -145,14 +145,14 @@ begin
   MySQL56Connection1.DatabaseName := DBName;
 
   // Werte in die INI-Datei schreiben
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+//  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
   try
-    IniFile.WriteString('Database', 'HostName', DBServer);
-    IniFile.WriteString('Database', 'UserName', DBUser);
-    IniFile.WriteString('Database', 'Password', DBPass);
-    IniFile.WriteString('Database', 'DatabaseName', DBName);
+    ConfigManager.WriteString('Database', 'HostName', DBServer);
+    ConfigManager.WriteString('Database', 'UserName', DBUser);
+    ConfigManager.WriteString('Database', 'Password', DBPass);
+    ConfigManager.WriteString('Database', 'DatabaseName', DBName);
   finally
-    IniFile.Free;
+//    IniFile.Free;
 
   end;
 
@@ -160,14 +160,14 @@ begin
 end;
 
 procedure TForm1.UpdateConnectionStatusInConfig(IsValid: boolean);
-var
-  IniFile: TIniFile;
+//var
+//  IniFile: TIniFile;
 begin
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+
   try
-    IniFile.WriteBool('Database', 'ConnectionValid', IsValid);
+    ConfigManager.WriteBool('Database', 'ConnectionValid', IsValid);
   finally
-    IniFile.Free;
+
   end;
 end;
 
@@ -318,16 +318,16 @@ end;
 function TForm1.UserExists: boolean;
 var
   SQLQuery: TSQLQuery;
-  IniFile: TIniFile;
+
   NewUserName: string;
 begin
   Result := False;
 
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+//  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
   try
-    NewUserName := IniFile.ReadString('Database', 'UserName', '');
+    NewUserName := configmanager.ReadString('Database', 'UserName', '');
   finally
-    IniFile.Free;
+//    IniFile.Free;
   end;
 
   SQLQuery := TSQLQuery.Create(nil);
@@ -354,16 +354,16 @@ end;
 
 procedure TForm1.CreateUser;
 var
-  IniFile: TIniFile;
+//  IniFile: TIniFile;
   NewUserName, NewUserPassword, Database: string;
 begin
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+//  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
   try
-    NewUserName := IniFile.ReadString('Database', 'UserName', '');
-    NewUserPassword := IniFile.ReadString('Database', 'Password', '');
-    Database := IniFile.ReadString('Database', 'DatabaseName', '');
+    NewUserName := configmanager.ReadString('Database', 'UserName', '');
+    NewUserPassword := configmanager.ReadString('Database', 'Password', '');
+    Database := configmanager.ReadString('Database', 'DatabaseName', '');
   finally
-    IniFile.Free;
+//    IniFile.Free;
   end;
   try
     // Benutzer erstellen (dies kann je nach Datenbanksystem variieren).
@@ -406,20 +406,20 @@ begin
 end;
 
 procedure TForm1.SaveConfig;
-var
-  IniFile: TIniFile;
+//var
+//  IniFile: TIniFile;
 begin
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+//  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
   try
-    IniFile.WriteString('Database', 'HostName', MySQL56Connection1.HostName);
-    IniFile.WriteString('Database', 'UserName', MySQL56Connection1.UserName);
-    IniFile.WriteString('Database', 'Password', MySQL56Connection1.Password);
-    IniFile.WriteString('Database', 'DatabaseName', MySQL56Connection1.DatabaseName);
-    IniFile.WriteInteger('Database', 'Port', MySQL56Connection1.Port);
-    IniFile.WriteInteger('Settings', 'TimerInterval', Timer1.Interval);
+    configmanager.WriteString('Database', 'HostName', MySQL56Connection1.HostName);
+    configmanager.WriteString('Database', 'UserName', MySQL56Connection1.UserName);
+    configmanager.WriteString('Database', 'Password', MySQL56Connection1.Password);
+    configmanager.WriteString('Database', 'DatabaseName', MySQL56Connection1.DatabaseName);
+    configmanager.WriteInteger('Database', 'Port', MySQL56Connection1.Port);
+    configmanager.WriteInteger('Settings', 'TimerInterval', Timer1.Interval);
     UpdateConnectionStatusInConfig(False);
   finally
-    IniFile.Free;
+//    IniFile.Free;
   end;
 end;
 
@@ -667,20 +667,20 @@ end;
 
 
 procedure TForm1.LoadConfig;
-var
-  IniFile: TIniFile;
+//var
+//  IniFile: TIniFile;
 begin
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+//  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
   try
-    MySQL56Connection1.HostName := IniFile.ReadString('Database', 'HostName', '');
-    MySQL56Connection1.UserName := IniFile.ReadString('Database', 'UserName', '');
-    MySQL56Connection1.Password := IniFile.ReadString('Database', 'Password', '');
+    MySQL56Connection1.HostName := configmanager.ReadString('Database', 'HostName', '');
+    MySQL56Connection1.UserName := configmanager.ReadString('Database', 'UserName', '');
+    MySQL56Connection1.Password := configmanager.ReadString('Database', 'Password', '');
     MySQL56Connection1.DatabaseName :=
-      IniFile.ReadString('Database', 'DatabaseName', '');
-    MySQL56Connection1.Port := IniFile.ReadInteger('Database', 'Port', 3306);
-    Timer1.Interval := IniFile.ReadInteger('Settings', 'TimerInterval', 5000);
+      configmanager.ReadString('Database', 'DatabaseName', '');
+    MySQL56Connection1.Port := configmanager.ReadInteger('Database', 'Port', 3306);
+    Timer1.Interval := configmanager.ReadInteger('Settings', 'TimerInterval', 5000);
   finally
-    IniFile.Free;
+//    IniFile.Free;
   end;
 end;
 

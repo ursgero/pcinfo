@@ -5,7 +5,7 @@ unit pcinfo2;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, inifiles;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,  GlobalConfig;
 
 type
 
@@ -77,21 +77,18 @@ begin
 end;
 
 procedure TFormConfig.LoadConfig;
-var
-  IniFile: TIniFile;
-begin
-  if not FileExists(ConfigPathName+ConfigFileName) then Exit;
 
-  IniFile := TIniFile.Create(ConfigPathName+ConfigFileName);
+begin
+
   try
-    EditHostName.Text := IniFile.ReadString('Database', 'HostName', '');
-    EditUserName.Text := IniFile.ReadString('Database', 'UserName', '');
-    EditPassword.Text := IniFile.ReadString('Database', 'Password', '');
-    EditDatabaseName.Text := IniFile.ReadString('Database', 'DatabaseName', '');
-    EditTimerInterval.Text := IntToStr(IniFile.ReadInteger('Settings', 'TimerInterval', 5000));
-    EditPort.Text := IntToStr(IniFile.ReadInteger('Database', 'Port', 3306));
+    EditHostName.Text := configmanager.ReadString('Database', 'HostName', '');
+    EditUserName.Text := configmanager.ReadString('Database', 'UserName', '');
+    EditPassword.Text := configmanager.ReadString('Database', 'Password', '');
+    EditDatabaseName.Text := configmanager.ReadString('Database', 'DatabaseName', '');
+    EditTimerInterval.Text := IntToStr(configmanager.ReadInteger('Settings', 'TimerInterval', 5000));
+    EditPort.Text := IntToStr(configmanager.ReadInteger('Database', 'Port', 3306));
   finally
-    IniFile.Free;
+
   end;
 end;
 
@@ -99,21 +96,18 @@ end;
 { TFormConfig }
 
 procedure TFormConfig.SaveButtonClick(Sender: TObject);
-var
-  IniFile: TIniFile;
+
 begin
   try
-    IniFile := TIniFile.Create(ConfigFileName);
-    try
-      IniFile.WriteString('Database', 'HostName', EditHostName.Text);
-      IniFile.WriteString('Database', 'UserName', EditUserName.Text);
-      IniFile.WriteString('Database', 'Password', EditPassword.Text);
-      IniFile.WriteString('Database', 'DatabaseName', EditDatabaseName.Text);
-      IniFile.WriteInteger('Settings', 'TimerInterval', StrToIntDef(EditTimerInterval.Text, 5000));
-      IniFile.WriteInteger('Database', 'Port', StrToIntDef(EditPort.Text, 3306));
-    finally
-      IniFile.Free;
-    end;
+
+
+      configmanager.WriteString('Database', 'HostName', EditHostName.Text);
+      configmanager.WriteString('Database', 'UserName', EditUserName.Text);
+      configmanager.WriteString('Database', 'Password', EditPassword.Text);
+      configmanager.WriteString('Database', 'DatabaseName', EditDatabaseName.Text);
+      configmanager.WriteInteger('Settings', 'TimerInterval', StrToIntDef(EditTimerInterval.Text, 5000));
+      configmanager.WriteInteger('Database', 'Port', StrToIntDef(EditPort.Text, 3306));
+
   except
     on E: Exception do
     begin
@@ -124,16 +118,16 @@ begin
           FileCreate(ConfigFileName);
 
         // Nach erfolgreichem Anlegen, erneut versuchen, die Parameter zu schreiben
-        IniFile := TIniFile.Create(ConfigFileName);
+;
         try
-          IniFile.WriteString('Database', 'HostName', EditHostName.Text);
-          IniFile.WriteString('Database', 'UserName', EditUserName.Text);
-          IniFile.WriteString('Database', 'Password', EditPassword.Text);
-          IniFile.WriteString('Database', 'DatabaseName', EditDatabaseName.Text);
-          IniFile.WriteInteger('Settings', 'TimerInterval', StrToIntDef(EditTimerInterval.Text, 5000));
-          IniFile.WriteInteger('Database', 'Port', StrToIntDef(EditPort.Text, 3306));
+          configmanager.WriteString('Database', 'HostName', EditHostName.Text);
+          configmanager.WriteString('Database', 'UserName', EditUserName.Text);
+          configmanager.WriteString('Database', 'Password', EditPassword.Text);
+          configmanager.WriteString('Database', 'DatabaseName', EditDatabaseName.Text);
+          configmanager.WriteInteger('Settings', 'TimerInterval', StrToIntDef(EditTimerInterval.Text, 5000));
+          configmanager.WriteInteger('Database', 'Port', StrToIntDef(EditPort.Text, 3306));
         finally
-          IniFile.Free;
+
         end;
 
       except

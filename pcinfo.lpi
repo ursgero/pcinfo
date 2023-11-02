@@ -36,7 +36,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="9">
       <Unit0>
         <Filename Value="pcinfo.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -81,6 +81,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ConfigBroadcastU"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="configmanageru.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ConfigManagerU"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="globalconfig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GlobalConfig"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

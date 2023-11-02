@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, DB, sqldb, mysql56conn, Forms, Controls, Graphics, Dialogs,
-  DBGrids, ExtCtrls, StdCtrls, inifiles;
+  DBGrids, ExtCtrls, StdCtrls, GlobalConfig;
 
 type
 
@@ -87,19 +87,18 @@ begin
 end;
 
 procedure TFormStandardDateiNamenEditor.LoadConfig;
-var
-  IniFile: TIniFile;
+
 begin
-  IniFile := TIniFile.Create(ConfigPathName+ConfigFileName);
+
   try
-    MySQL56Connection1.HostName := IniFile.ReadString('Database', 'HostName', '');
-    MySQL56Connection1.UserName := IniFile.ReadString('Database', 'UserName', '');
-    MySQL56Connection1.Password := IniFile.ReadString('Database', 'Password', '');
+    MySQL56Connection1.HostName := configmanager.ReadString('Database', 'HostName', '');
+    MySQL56Connection1.UserName := configmanager.ReadString('Database', 'UserName', '');
+    MySQL56Connection1.Password := configmanager.ReadString('Database', 'Password', '');
     MySQL56Connection1.DatabaseName :=
-      IniFile.ReadString('Database', 'DatabaseName', '');
-    MySQL56Connection1.Port := IniFile.ReadInteger('Database', 'Port', 3306);
+      configmanager.ReadString('Database', 'DatabaseName', '');
+    MySQL56Connection1.Port := configmanager.ReadInteger('Database', 'Port', 3306);
   finally
-    IniFile.Free;
+
   end;
 end;
 

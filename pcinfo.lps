@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="23">
+    <Units Count="25">
       <Unit0>
         <Filename Value="pcinfo.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="7"/>
-        <CursorPos Y="8"/>
-        <UsageCount Value="101"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="53" Y="10"/>
+        <UsageCount Value="104"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -19,10 +19,9 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="634"/>
-        <CursorPos X="74" Y="653"/>
-        <UsageCount Value="101"/>
+        <TopLine Value="654"/>
+        <CursorPos X="20" Y="679"/>
+        <UsageCount Value="104"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -32,10 +31,11 @@
         <ComponentName Value="FormConfig"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="15"/>
-        <TopLine Value="120"/>
-        <CursorPos Y="57"/>
-        <UsageCount Value="101"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="116"/>
+        <CursorPos Y="130"/>
+        <UsageCount Value="104"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -45,10 +45,10 @@
         <ComponentName Value="FormStandardDateiNamenEditor"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="11"/>
-        <TopLine Value="21"/>
-        <CursorPos X="61" Y="25"/>
-        <UsageCount Value="97"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="72"/>
+        <CursorPos Y="101"/>
+        <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
@@ -58,10 +58,10 @@
         <ComponentName Value="Form2"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="157"/>
-        <CursorPos Y="174"/>
-        <UsageCount Value="84"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="41"/>
+        <CursorPos X="20" Y="60"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
@@ -71,9 +71,9 @@
         <ComponentName Value="Form3"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="10"/>
-        <CursorPos X="34" Y="14"/>
-        <UsageCount Value="82"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="80" Y="38"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit5>
@@ -81,10 +81,10 @@
         <Filename Value="configbroadcastu.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ConfigBroadcastU"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="8"/>
-        <CursorPos X="25" Y="35"/>
-        <UsageCount Value="40"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="204"/>
+        <CursorPos Y="233"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -116,10 +116,10 @@
       </Unit10>
       <Unit11>
         <Filename Value="..\..\..\lcl\include\control.inc"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="4453"/>
         <CursorPos Y="4472"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="47"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -132,19 +132,17 @@
       <Unit13>
         <Filename Value="..\..\..\lcl\customtimer.pas"/>
         <UnitName Value="CustomTimer"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="132"/>
         <CursorPos Y="151"/>
         <UsageCount Value="42"/>
-        <Loaded Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\..\..\lcl\interfaces\win32\win32callback.inc"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2818"/>
         <CursorPos Y="2847"/>
         <UsageCount Value="33"/>
-        <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="..\..\..\lcl\interfaces\win32\win32int.pp"/>
@@ -154,35 +152,31 @@
       </Unit15>
       <Unit16>
         <Filename Value="..\..\..\lcl\include\radiogroup.inc"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="422"/>
         <CursorPos Y="441"/>
         <UsageCount Value="37"/>
-        <Loaded Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="..\..\..\lcl\include\messagedialogs.inc"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="208"/>
         <CursorPos Y="227"/>
         <UsageCount Value="24"/>
-        <Loaded Value="True"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\..\..\components\indy-10.2.0.3\fpc\IdUDPServer.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="113"/>
         <CursorPos X="53" Y="124"/>
         <UsageCount Value="19"/>
-        <Loaded Value="True"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\..\..\components\indy-10.2.0.3\fpc\IdStack.pas"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="626"/>
         <CursorPos X="60" Y="633"/>
         <UsageCount Value="15"/>
-        <Loaded Value="True"/>
       </Unit19>
       <Unit20>
         <Filename Value="..\..\..\components\indy-10.2.0.3\fpc\IdSocketHandle.pas"/>
@@ -193,141 +187,158 @@
       </Unit20>
       <Unit21>
         <Filename Value="..\..\..\components\indy-10.2.0.3\fpc\IdUDPBase.pas"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="297"/>
         <CursorPos Y="316"/>
         <UsageCount Value="14"/>
-        <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="..\..\..\lcl\include\brush.inc"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="79" Y="9"/>
-        <UsageCount Value="14"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="15"/>
       </Unit22>
+      <Unit23>
+        <Filename Value="configmanageru.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ConfigManagerU"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="17"/>
+        <CursorPos X="36" Y="35"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="globalconfig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GlobalConfig"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="41" Y="17"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit24>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="115" Column="30" TopLine="98"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="155" Column="10" TopLine="124"/>
       </Position1>
       <Position2>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Column="30"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="164" Column="18" TopLine="132"/>
       </Position2>
       <Position3>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="40" Column="18" TopLine="8"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="321" TopLine="289"/>
       </Position3>
       <Position4>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="220" Column="15" TopLine="188"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="326" Column="20" TopLine="294"/>
       </Position4>
       <Position5>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="155" Column="15" TopLine="137"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="330" Column="10" TopLine="298"/>
       </Position5>
       <Position6>
         <Filename Value="pcinfo1.pas"/>
-        <Caret Line="823" TopLine="814"/>
+        <Caret Line="357" Column="18" TopLine="325"/>
       </Position6>
       <Position7>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="133" TopLine="114"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="360" Column="20" TopLine="328"/>
       </Position7>
       <Position8>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="134" TopLine="114"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="366" Column="10" TopLine="334"/>
       </Position8>
       <Position9>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="135" TopLine="114"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="410" Column="18" TopLine="378"/>
       </Position9>
       <Position10>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="136" TopLine="114"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="412" Column="20" TopLine="380"/>
       </Position10>
       <Position11>
         <Filename Value="pcinfo1.pas"/>
-        <Caret Line="823" TopLine="814"/>
+        <Caret Line="422" Column="10" TopLine="390"/>
       </Position11>
       <Position12>
         <Filename Value="pcinfo1.pas"/>
-        <Caret Line="835" Column="69" TopLine="814"/>
+        <Caret Line="671" Column="18" TopLine="639"/>
       </Position12>
       <Position13>
         <Filename Value="pcinfo1.pas"/>
-        <Caret Line="847" Column="5" TopLine="814"/>
+        <Caret Line="673" Column="8" TopLine="641"/>
       </Position13>
       <Position14>
-        <Filename Value="pcinfo1.pas"/>
-        <Caret Line="823" TopLine="814"/>
+        <Filename Value="configmanageru.pas"/>
+        <Caret Line="26"/>
       </Position14>
       <Position15>
-        <Filename Value="pcinfo1.pas"/>
-        <Caret Line="821" TopLine="814"/>
+        <Filename Value="configmanageru.pas"/>
+        <Caret Line="35" Column="36" TopLine="17"/>
       </Position15>
       <Position16>
-        <Filename Value="pcinfo1.pas"/>
-        <Caret Line="850" TopLine="819"/>
+        <Filename Value="globalconfig.pas"/>
+        <Caret Line="17" Column="41"/>
       </Position16>
       <Position17>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="166" Column="14" TopLine="128"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="163" Column="3" TopLine="146"/>
       </Position17>
       <Position18>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="106" Column="70" TopLine="103"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="409" Column="3" TopLine="392"/>
       </Position18>
       <Position19>
-        <Filename Value="..\..\..\components\indy-10.2.0.3\fpc\IdStack.pas"/>
-        <Caret Line="644" TopLine="626"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="670" Column="3" TopLine="653"/>
       </Position19>
       <Position20>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="106" Column="70" TopLine="103"/>
+        <Filename Value="pcinfo1.pas"/>
+        <Caret Line="683" Column="3" TopLine="664"/>
       </Position20>
       <Position21>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="107" Column="70" TopLine="104"/>
+        <Filename Value="configbroadcastu.pas"/>
+        <Caret Line="6" Column="35"/>
       </Position21>
       <Position22>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="168" Column="25" TopLine="150"/>
+        <Filename Value="configbroadcastu.pas"/>
+        <Caret Line="145" TopLine="114"/>
       </Position22>
       <Position23>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="174" Column="25" TopLine="174"/>
+        <Filename Value="configbroadcastu.pas"/>
+        <Caret Line="140" Column="5" TopLine="120"/>
       </Position23>
       <Position24>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="163" Column="48" TopLine="157"/>
+        <Filename Value="configbroadcastu.pas"/>
+        <Caret Line="162" Column="37" TopLine="135"/>
       </Position24>
       <Position25>
-        <Filename Value="pcinfo4.pas"/>
-        <Caret Line="174" TopLine="157"/>
+        <Filename Value="configbroadcastu.pas"/>
+        <Caret Line="164" Column="3" TopLine="145"/>
       </Position25>
       <Position26>
-        <Filename Value="pcinfo1.pas"/>
-        <Caret Line="857" Column="39" TopLine="854"/>
+        <Filename Value="pcinfo4.pas"/>
+        <Caret Line="9" Column="32"/>
       </Position26>
       <Position27>
-        <Filename Value="pcinfo1.pas"/>
-        <Caret Line="656" Column="39" TopLine="653"/>
+        <Filename Value="pcinfo4.pas"/>
+        <Caret Line="63" TopLine="34"/>
       </Position27>
       <Position28>
-        <Filename Value="..\..\..\components\indy-10.2.0.3\fpc\IdStack.pas"/>
-        <Caret Line="633" Column="60" TopLine="626"/>
+        <Filename Value="pcinfo3.pas"/>
+        <Caret Line="9" Column="32"/>
       </Position28>
       <Position29>
-        <Filename Value="configbroadcastu.pas"/>
-        <Caret Line="35" Column="25" TopLine="8"/>
+        <Filename Value="pcinfo2.pas"/>
+        <Caret Line="8" Column="68"/>
       </Position29>
       <Position30>
-        <Filename Value="pcinfo1.pas"/>
-        <Caret Line="199" TopLine="195"/>
+        <Filename Value="pcinfo2.pas"/>
+        <Caret Line="91" TopLine="62"/>
       </Position30>
     </JumpHistory>
     <RunParams>

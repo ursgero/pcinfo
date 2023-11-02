@@ -3,7 +3,7 @@ unit ConfigBroadcastU;
 interface
 
 uses
-  Classes, SysUtils, IdUDPServer, inifiles, IdGlobal, IdSocketHandle, IDUDPClient;
+  Classes, SysUtils, IdUDPServer, IdGlobal, IdSocketHandle, IDUDPClient,GlobalConfig;
 
 type
 
@@ -129,20 +129,20 @@ Begin
 end;
 
 function TConfigBroadcaster.IsConfigFileValid: boolean;
-var
-  IniFile: TIniFile;
+
+
 begin
   getfilename;
   Result := FileExists(ConfigPathName + ConfigFileName);
   if Result then
   begin
-    IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+
     try
       // Überprüfen Sie hier, ob die benötigten Schlüssel vorhanden und korrekt sind
       // Zum Beispiel:
-      Result := IniFile.ReadBool('Database', 'ConnectionValid', False);
+      Result := configmanager.ReadBool('Database', 'ConnectionValid', False);
     finally
-      IniFile.Free;
+
     end;
   end;
 end;
@@ -150,19 +150,18 @@ end;
 
 
 function TConfigBroadcaster.ReadConfigData: string;
-var
-  IniFile: TIniFile;
+
 begin
   getfilename;
   Result := '';
-  IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+
   try
-    Result := Result + IniFile.ReadString('Database', 'HostName', '') + '|';
-    Result := Result + IniFile.ReadString('Database', 'UserName', '') + '|';
-    Result := Result + IniFile.ReadString('Database', 'Password', '') + '|';
-    Result := Result + IniFile.ReadString('Database', 'DatabaseName', '');
+    Result := Result + configmanager.ReadString('Database', 'HostName', '') + '|';
+    Result := Result + configmanager.ReadString('Database', 'UserName', '') + '|';
+    Result := Result + configmanager.ReadString('Database', 'Password', '') + '|';
+    Result := Result + configmanager.ReadString('Database', 'DatabaseName', '');
   finally
-    IniFile.Free;
+//    IniFile.Free;
   end;
 end;
 
@@ -214,7 +213,7 @@ end;
 
 procedure TConfigBroadcaster.StoreConfigData(const Data: string);
 var
-  IniFile: TIniFile;
+
   Parts: TStringList;
 begin
   Parts := TStringList.Create;
@@ -224,14 +223,14 @@ begin
 
     if Parts.Count >= 4 then
     begin
-      IniFile := TIniFile.Create(ConfigPathName + ConfigFileName);
+
       try
-        IniFile.WriteString('Database', 'HostName', Parts[0]);
-        IniFile.WriteString('Database', 'UserName', Parts[1]);
-        IniFile.WriteString('Database', 'Password', Parts[2]);
-        IniFile.WriteString('Database', 'DatabaseName', Parts[3]);
+        configmanager.WriteString('Database', 'HostName', Parts[0]);
+        configmanager.WriteString('Database', 'UserName', Parts[1]);
+        configmanager.WriteString('Database', 'Password', Parts[2]);
+        configmanager.WriteString('Database', 'DatabaseName', Parts[3]);
       finally
-        IniFile.Free;
+
       end;
     end;
   finally
