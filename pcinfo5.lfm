@@ -1,0 +1,23 @@
+object Form3: TForm3
+  Left = 175
+  Height = 420
+  Top = 155
+  Width = 611
+  Caption = 'Textfeld Ansicht'
+  ClientHeight = 420
+  ClientWidth = 611
+  LCLVersion = '2.0.12.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 420
+    Top = 0
+    Width = 611
+    Align = alClient
+    Lines.Strings = (
+      'Memo1'
+    )
+    OnChange = Memo1Change
+    ReadOnly = True
+    TabOrder = 0
+  end
+end
